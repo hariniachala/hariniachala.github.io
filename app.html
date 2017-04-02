@@ -1,0 +1,39 @@
+<header class="header">
+    <img class="geekLabel" src="images/gl-logo@2x.png"/>
+    <span class="spotifyText">Powered by Spotify</span>
+    <input class="logo" type="image" src="images/hero-img@2x.png"/>
+</header>
+<div class="container">
+    <div class="searchBox">
+        <input ng-model="searchTerm" class="searchInput" type="text" id="myInput"
+               placeholder="Search for artist or album title">
+        <a href="#" class="pinkBtn searchBtn" ng-click="search()">SEARCH</a>
+    </div>
+    <br/>
+    <div style="width:100%;color:white;margin: auto;padding-top:50px; padding-bottom:20px" ng-if="noResults">
+        Sorry. No results for '{{query.text}}'.
+    </div>
+    <!-- Show search results -->
+    <div style="width:100%;">
+        <div class="galleryItem" ng-repeat="item in items">
+            <img src="{{item.type == 'artist' ? 'images/artist-icon@2x.png' : 'images/album-icon@2x.png'}}"
+                 class="artist-or-album"/>
+            <a href="#" class="imgbox" ng-click="selectItem(item)">
+                <div>
+
+                    <div resize-height>
+                        <img ng-src="{{ item.images[0].url}}" alt=""/>
+                    </div>
+                </div>
+                <div class="summary">{{item.name}}</div>
+            </a>
+        </div>
+    </div>
+    <modal-box selected-item="selectedItem"></modal-box>
+</div>
+<div style="width:100%; padding-bottom: 100px;margin: auto;"><a ng-show="isMoreAvailable" href="#" class="pinkBtn" ng-click="loadMore()">SHOW ME
+    MORE!</a>
+</div>
+<footer class="footer">
+    Designed by Geek Label - Powered by Spotify
+</footer>

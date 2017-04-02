@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FindMusic</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <link href="scss/style.css" type="text/css" rel="stylesheet" >
+    <link href="scss/modal.css" type="text/css" rel="stylesheet" >
+    <link href="scss/responsive.css" type="text/css" rel="stylesheet" >
+
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="lib/jasmine.js"></script>
+
+    <script src="app.js"></script>
+    <script src="constants.js"></script>
+    <script src="services/cache.js"></script>
+    <script src="services/spotify.js"></script>
+    <script src="directives/resize-height.js"></script>
+    <script src="directives/modal-box.js"></script>
+    <script src="app-controller.js"></script>
+</head>
+<body ng-app="app">
+	<ui-view></ui-view>
+</body>
+</html>

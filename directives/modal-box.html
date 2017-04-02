@@ -1,0 +1,33 @@
+<!-- The Modal -->
+<div id="myModal" class="modal" ng-show="showModal()">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-imgbox">
+            <img src="images/Cross@2x.png" class="close" ng-click="closeModal();"/>
+            <img ng-src="{{selectedItem.images[0].url}}" alt=""/>
+
+            <div class="modal-text">
+                {{selectedItem.name}}
+            </div>
+        </div>
+        <ul class="modal-list">
+            <li>{{isLoaded ? (selectedItem && selectedItem.type === 'artist' ? 'Albums' : 'Tracks' ):
+                'Loading..'}}
+            </li>
+            <li ng-repeat="item in selectedItem.list">
+
+                <!--<div class="modal-list-item">-->
+                    <img ng-show="{{item.images != null}}" style="width:15%"
+                         ng-src="{{item.images[0].url}}"
+                         alt=""/>
+
+                    <span style="padding-left:10px;">{{item.name}}</span>
+
+                    <!--<p style="padding-left:15px;">{{item.name}}</p>-->
+                <!--</div>-->
+            </li>
+        </ul>
+    </div>
+
+</div>

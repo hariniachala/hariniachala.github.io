@@ -1,0 +1,26 @@
+@media only screen and (max-width: 530px), only screen and (max-device-width: 530px) {
+  .galleryItem {
+    width: 95%; }
+
+  .geekLabel {
+    width: 30px; }
+
+  .spotifyText {
+    font-size: 0.7em; }
+
+  .modal-content {
+    width: 80%; }
+
+  .modal-imgbox {
+    height: 200px; }
+
+  .searchBox {
+    width: 280px; }
+
+  .searchBtn {
+    position: relative;
+    z-index: 10;
+    /* Sit on top */
+    margin: auto; } }
+
+/*# sourceMappingURL=responsive.css.map */
