@@ -8,37 +8,45 @@ describe('app.controller', function () {
         $controller = _$controller_;
     }));
 
-    describe('Check if load more search results is shown correctly when can load more results', function () {
-        it('Test', function () {
-            var $scope = {
+    describe('$scope.canLoadMore', function () {
+        it('Check if "show more" button is shown when user is on the first page', function () {
+            //init scope query
+            var scope = {
                 query: {
-                    text: 'abc',
-                    page: 1,
-                    total: 60
+                    text: '',
+                    page: 0,
+                    total: 0
                 }
             };
             var controller = $controller('AppController', {
-                $scope: $scope
+                $scope: scope
             });
-            //Consider fetch limit is 6.
-            expect($scope.vm.canLoadMore()).toBe(true);
+            //setup the test scenario
+            scope.query.page = 1;
+            scope.query.total = 60;
+            //consider fetch limit of 6.
+            expect(scope.canLoadMore()).toBe(true);
         });
     });
 
-    describe('Check if load more search results is shown correctly when you cannot load more results', function () {
-        it('Test', function () {
-            var $scope = {
+    describe('$scope.canLoadMore', function () {
+        it('Check if "show more" button is not shown when user is on the last page', function () {
+            //init scope query
+            var scope = {
                 query: {
-                    text: 'abc',
-                    page: 10,
-                    total: 60
+                    text: '',
+                    page: 0,
+                    total: 0
                 }
             };
             var controller = $controller('AppController', {
-                $scope: $scope
+                $scope: scope
             });
-            //Consider fetch limit is 6.
-            expect($scope.vm.canLoadMore()).toBe(false);
+            //setup the test scenario
+            scope.query.page = 10;
+            scope.query.total = 60;
+            //consider fetch limit of 6.
+            expect(scope.canLoadMore()).toBe(false);
         });
     });
 
