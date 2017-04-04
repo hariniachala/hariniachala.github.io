@@ -13,9 +13,9 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            "node_modules/angular/angular.js",
-            "node_modules/angular-mocks/angular-mocks.js",//angular and angular mocks versions must match
-            "node_modules/angular-ui-router/release/angular-ui-router.js",
+            "../node_modules/angular/angular.js",
+            "../node_modules/angular-mocks/angular-mocks.js",//angular and angular mocks versions must match
+            "../node_modules/angular-ui-router/release/angular-ui-router.js",
             "../app.js",
             "../app-controller.js",
             "../services/spotify.js",
